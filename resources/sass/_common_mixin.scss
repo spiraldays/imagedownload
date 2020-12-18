@@ -1,0 +1,308 @@
+@charset "UTF-8";
+
+
+/*=========================================================================
+CSS reset
+--------------------------------------------------------------------------*/
+	/* http://meyerweb.com/eric/tools/css/reset/ 
+	   v2.0 | 20110126
+	   License: none (public domain)
+	*/
+
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	p,a,li,span,dd,dt,h1,h2,h3,h4,h5 {
+		font-family: "Noto Sans JP";
+	}
+
+
+/*=========================================================================
+デバイス定義
+--------------------------------------------------------------------------*/
+	$device-desktop: 980px;
+	$device-sp: 640px; 
+
+	/* デスクトップ */
+	@mixin device-desktop {
+		@media (min-width: ($device-desktop)) {
+			@content;
+		}
+	}
+
+	/* タブレット */
+	@mixin device-tablet {
+		@media (min-width: ($device-sp))and(max-width: ($device-desktop)) {
+			@content;
+		}
+	}
+
+	/* スマホ */
+	@mixin device-sp {
+		@media (max-width: ($device-sp)) {
+			@content;
+		}
+	}
+
+
+
+	/* デスクトップで非表示 */
+	@include device-desktop{
+		.pc-none {
+			display: none;
+		}
+		.tablet-none {
+			display: block;
+		}
+		.sp-none {
+			display: block;
+		}
+	}
+
+	/* タブレットで非表示 */
+	@include device-tablet{
+		.pc-none {
+			display: none;
+		}
+		.tablet-none {
+			display: none;
+		}
+		.sp-none {
+			display: block;
+		}
+	}
+
+	/* スマホで非表示 */
+	@include device-sp{
+		.pc-none {
+			display: block;
+		}
+		.tablet-none {
+			display: none;
+		}
+		.sp-none {
+			display: none;
+		}
+	}
+
+
+
+
+
+
+
+/*=========================================================================
+@mixin contents-unit-width()
+コンテンツ幅指定
+
+ex) @include contents-unit-width(1000px);
+--------------------------------------------------------------------------*/
+	@mixin contents-unit-width($width) {
+		max-width: $width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+
+/*=========================================================================
+@mixin radius-func()
+角丸r指定
+
+ex) @include radius-func(5px);
+--------------------------------------------------------------------------*/
+	@mixin radius-func($r) {
+		border-radius:$r;
+		-moz-border-radius:$r;
+		-webkit-border-radius: $r;
+	}
+
+
+
+/*=========================================================================
+@mixin flexbox()
+Flex指定
+
+ex) @include flexbox(space-between);
+--------------------------------------------------------------------------*/
+	@mixin flexbox($content-type) {
+		-js-display: flex;
+		display: flex;
+		display: -webkit-box;/*--- ipad ---*/
+		display:-webkit-flex;/*--- ipad 7.0---*/
+		-webkit-justify-content: $content-type; /* ipad */
+		justify-content: $content-type;
+		-ms-flex-wrap:wrap;
+		-moz-flex-wrap:wrap;
+		-webkit-flex-wrap:wrap;
+		flex-wrap:wrap;
+	}
+
+
+
+/*=========================================================================
+@mixin opacity()
+透明度指定
+
+ex) @include opacity(0.8);
+--------------------------------------------------------------------------*/
+	@mixin opacity($value) {
+		opacity: $value;
+		filter: alpha(opacity= ($value*100) );
+		-moz-opacity: $value;
+		-ms-filter: "alpha(opacity=70)";
+	}
+
+
+
+/*=========================================================================
+@mixin listtext()
+折返しリストテキスト対策
+
+・テキストテキストテキストテキ
+　ストテキストテキストテキストテキ
+
+ex) @include listtext(1rem);
+--------------------------------------------------------------------------*/
+	@mixin listtext($fontwidth) {
+		padding-left: $fontwidth;
+		text-indent: -$fontwidth;
+	}
+
+
+
+/*=========================================================================
+@mixin center()
+要素に対して中央寄せ
+
+親要素にrelativeしておくこと。
+
+ex) @include center(xy);
+--------------------------------------------------------------------------*/
+	@mixin center($direction) {
+		position: absolute;
+		@if $direction==xy {
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		@else if $direction==x {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		@else if $direction==y {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+
+
+
+/*=========================================================================
+@mixin boxgradient()
+ボックスグラデーション
+
+ex) @include boxgradient(135deg, #f08037, #f13f79 );
+--------------------------------------------------------------------------*/
+@mixin boxgradient( $deg:135deg , $start-color:#f08037 , $end-color:#f13f79 ) {
+	background: -webkit-linear-gradient($deg, $start-color 0%, $end-color 70%) no-repeat;
+	background: linear-gradient($deg, $start-color 0%, $end-color 70%) no-repeat;
+}
+
+
+
+/*=========================================================================
+@mixin dispicon()
+ボックスグラデーション
+
+ex) @include dispicon(135deg, 150px, 100px, left, 50% );
+--------------------------------------------------------------------------*/
+@mixin dispicon($fileName, $width, $height, $xpos, $ypos) {
+	background: url($fileName) no-repeat $xpos $ypos;
+	background-size: $width $height;
+	width: $width;
+	height: $height;
+}
+
+
+
+/*=========================================================================
+@mixin markerline()
+テキストマーカーライン
+
+ex) @include markerline(255, 255, 30, .8 );
+--------------------------------------------------------------------------*/
+@mixin markerline($Rcolor:255, $Gcolor:0, $Bcolor:0, $alpha:.5, $height: 65% ){
+	background: linear-gradient(transparent $height, rgba($Rcolor, $Gcolor, $Bcolor, $alpha) 0%);
+	display: inline;
+}
+
+
+
+
+/*=========================================================================
+@mixin easing-effect()
+イージングエフェクト
+
+ex) @include easing-effect(all, 0.3s, ease-out);
+--------------------------------------------------------------------------*/
+@mixin easing-effect($property:all, $sec:0.3s, $ease:ease-out ){
+	-webkit-transition: $property $sec $ease;
+	-moz-transition: $property $sec $ease;
+	-o-transition: $property $sec $ease;
+	transition: $property  $sec $ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+

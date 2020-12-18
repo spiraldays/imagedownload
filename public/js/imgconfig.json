@@ -1,0 +1,35 @@
+
+[
+	{
+		"no": 256,
+		"filetype": 1,
+		"itemno": "TH0011",
+		"filename": "bnr_hks_5days.jpg",
+		"filepath": "2021/mother/",
+		"flg_enable": 1
+	},
+	{
+		"no": 511,
+		"filetype": 1,
+		"itemno": "AH0011",
+		"filename": "009s.jpg",
+		"filepath": "2021/mother/",
+		"flg_enable": 1
+	},
+	{
+		"no": 600,
+		"filetype": 3,
+		"itemno": "HN003",
+		"filename": "hana-koi-img05.png",
+		"filepath": "2021/mother/",
+		"flg_enable": 1
+	},
+	{
+		"no": 1024,
+		"filetype": 2,
+		"itemno": "TA5521",
+		"filename": "anchor_hananohi.jpg",
+		"filepath": "2021/mother/",
+		"flg_enable": 1
+	}
+]

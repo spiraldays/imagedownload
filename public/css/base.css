@@ -1,0 +1,569 @@
+@charset "UTF-8";
+/*=========================================================================
+CSS reset
+--------------------------------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 12, ../../resources/sass/_common_mixin.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 33, ../../resources/sass/_common_mixin.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 37, ../../resources/sass/_common_mixin.scss */
+body {
+  line-height: 1;
+}
+
+/* line 40, ../../resources/sass/_common_mixin.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 43, ../../resources/sass/_common_mixin.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 46, ../../resources/sass/_common_mixin.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 51, ../../resources/sass/_common_mixin.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 56, ../../resources/sass/_common_mixin.scss */
+p, a, li, span, dd, dt, h1, h2, h3, h4, h5 {
+  font-family: "Noto Sans JP";
+}
+
+/*=========================================================================
+デバイス定義
+--------------------------------------------------------------------------*/
+/* デスクトップ */
+/* タブレット */
+/* スマホ */
+/* デスクトップで非表示 */
+@media (min-width: 980px) {
+  /* line 92, ../../resources/sass/_common_mixin.scss */
+  .pc-none {
+    display: none;
+  }
+
+  /* line 95, ../../resources/sass/_common_mixin.scss */
+  .tablet-none {
+    display: block;
+  }
+
+  /* line 98, ../../resources/sass/_common_mixin.scss */
+  .sp-none {
+    display: block;
+  }
+}
+/* タブレットで非表示 */
+@media (min-width: 640px) and (max-width: 980px) {
+  /* line 105, ../../resources/sass/_common_mixin.scss */
+  .pc-none {
+    display: none;
+  }
+
+  /* line 108, ../../resources/sass/_common_mixin.scss */
+  .tablet-none {
+    display: none;
+  }
+
+  /* line 111, ../../resources/sass/_common_mixin.scss */
+  .sp-none {
+    display: block;
+  }
+}
+/* スマホで非表示 */
+@media (max-width: 640px) {
+  /* line 118, ../../resources/sass/_common_mixin.scss */
+  .pc-none {
+    display: block;
+  }
+
+  /* line 121, ../../resources/sass/_common_mixin.scss */
+  .tablet-none {
+    display: none;
+  }
+
+  /* line 124, ../../resources/sass/_common_mixin.scss */
+  .sp-none {
+    display: none;
+  }
+}
+/*=========================================================================
+@mixin contents-unit-width()
+コンテンツ幅指定
+
+ex) @include contents-unit-width(1000px);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin radius-func()
+角丸r指定
+
+ex) @include radius-func(5px);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin flexbox()
+Flex指定
+
+ex) @include flexbox(space-between);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin opacity()
+透明度指定
+
+ex) @include opacity(0.8);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin listtext()
+折返しリストテキスト対策
+
+・テキストテキストテキストテキ
+　ストテキストテキストテキストテキ
+
+ex) @include listtext(1rem);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin center()
+要素に対して中央寄せ
+
+親要素にrelativeしておくこと。
+
+ex) @include center(xy);
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin boxgradient()
+ボックスグラデーション
+
+ex) @include boxgradient(135deg, #f08037, #f13f79 );
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin dispicon()
+ボックスグラデーション
+
+ex) @include dispicon(135deg, 150px, 100px, left, 50% );
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin markerline()
+テキストマーカーライン
+
+ex) @include markerline(255, 255, 30, .8 );
+--------------------------------------------------------------------------*/
+/*=========================================================================
+@mixin easing-effect()
+イージングエフェクト
+
+ex) @include easing-effect(all, 0.3s, ease-out);
+--------------------------------------------------------------------------*/
+/* line 5, ../../resources/sass/base.scss */
+.contents-unit-width {
+  /* コンテンツ幅指定 */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 10, ../../resources/sass/base.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 14, ../../resources/sass/base.scss */
+.text-center {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* line 19, ../../resources/sass/base.scss */
+.device-test {
+  /* デバイスの指定切り替えの例 */
+}
+@media (min-width: 980px) {
+  /* line 19, ../../resources/sass/base.scss */
+  .device-test {
+    background-color: #FF0;
+  }
+}
+@media (min-width: 640px) and (max-width: 980px) {
+  /* line 19, ../../resources/sass/base.scss */
+  .device-test {
+    background-color: #0F0;
+  }
+}
+@media (max-width: 640px) {
+  /* line 19, ../../resources/sass/base.scss */
+  .device-test {
+    background-color: #00F;
+  }
+}
+
+/* line 39, ../../resources/sass/base.scss */
+header {
+  background-color: #EFEFEF;
+  padding: 1.4rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* line 46, ../../resources/sass/base.scss */
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: #999999;
+}
+
+/* line 52, ../../resources/sass/base.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #111111;
+  font-family: "Noto Sans JP";
+}
+
+/* line 58, ../../resources/sass/base.scss */
+h1 {
+  font-size: 2rem;
+  letter-spacing: .2rem;
+}
+
+/* line 63, ../../resources/sass/base.scss */
+p {
+  line-height: 150%;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+}
+
+/* line 69, ../../resources/sass/base.scss */
+body {
+  background-color: #ffffff;
+}
+
+/* line 73, ../../resources/sass/base.scss */
+.readme {
+  background-color: #f3faff;
+  padding: 2rem;
+  margin-bottom: 5rem;
+}
+/* line 78, ../../resources/sass/base.scss */
+.readme h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+/* line 84, ../../resources/sass/base.scss */
+.readme h2 span {
+  display: inline-block;
+  border-bottom: 2px dashed #000;
+  padding-bottom: .5rem;
+}
+/* line 92, ../../resources/sass/base.scss */
+.readme p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+/* line 97, ../../resources/sass/base.scss */
+.readme span.notice {
+  display: block;
+  margin-bottom: .4rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+/* line 105, ../../resources/sass/base.scss */
+.readme span.subnotice {
+  display: block;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+/* line 112, ../../resources/sass/base.scss */
+.readme ul li {
+  font-size: 1rem;
+  line-height: 150%;
+  margin-bottom: .2rem;
+}
+
+/* /.readme */
+/* line 121, ../../resources/sass/base.scss */
+.filterinput {
+  -js-display: flex;
+  display: flex;
+  display: -webkit-box;
+  /*--- ipad ---*/
+  display: -webkit-flex;
+  /*--- ipad 7.0---*/
+  -webkit-justify-content: start;
+  /* ipad */
+  justify-content: start;
+  -ms-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 2rem 2rem 1rem 2rem;
+  background-color: #F8F8F8;
+  width: 580px;
+  margin: 0 auto 5rem auto;
+}
+/* line 128, ../../resources/sass/base.scss */
+.filterinput #listsearchinput {
+  font-size: 2rem;
+  width: 14rem;
+  padding: .25rem;
+}
+/* line 135, ../../resources/sass/base.scss */
+.filterinput #filterclear {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #5cb8ff;
+  color: #FFFFFF;
+  margin-left: 1rem;
+}
+/* line 144, ../../resources/sass/base.scss */
+.filterinput #filterclear:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -ms-filter: "alpha(opacity=70)";
+}
+/* line 149, ../../resources/sass/base.scss */
+.filterinput dt {
+  font-weight: bold;
+  margin-right: 1rem;
+  width: 9rem;
+  padding-top: 1rem;
+}
+/* line 157, ../../resources/sass/base.scss */
+.filterinput dd span.ex {
+  display: block;
+  margin-top: .2rem;
+  color: #aaaaaa;
+}
+/* line 164, ../../resources/sass/base.scss */
+.filterinput dd.input {
+  width: 15rem;
+}
+/* line 167, ../../resources/sass/base.scss */
+.filterinput dd.clear {
+  width: 10rem;
+}
+
+/* /.filterinput */
+/* line 173, ../../resources/sass/base.scss */
+.btn-wrap {
+  margin: 0 auto;
+}
+
+/* line 177, ../../resources/sass/base.scss */
+.btn {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+}
+/* line 181, ../../resources/sass/base.scss */
+.btn a {
+  display: inline-block;
+  background-color: #ff5c5c;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  letter-spacing: .1rem;
+}
+/* line 191, ../../resources/sass/base.scss */
+.btn a:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -ms-filter: "alpha(opacity=70)";
+}
+
+/* line 198, ../../resources/sass/base.scss */
+.negation a {
+  background-color: #AAAAAA;
+}
+
+/* line 204, ../../resources/sass/base.scss */
+.back-btn a {
+  padding: 1.6rem 5rem;
+  margin-bottom: 5rem;
+}
+
+/* line 211, ../../resources/sass/base.scss */
+.applicant a {
+  background-color: #fF9900;
+  font-size: 1.5rem;
+  letter-spacing: .2rem;
+  padding: 2.5rem 7rem;
+  margin-bottom: 5rem;
+}
+
+/* line 220, ../../resources/sass/base.scss */
+#imglists {
+  -js-display: flex;
+  display: flex;
+  display: -webkit-box;
+  /*--- ipad ---*/
+  display: -webkit-flex;
+  /*--- ipad 7.0---*/
+  -webkit-justify-content: start;
+  /* ipad */
+  justify-content: start;
+  -ms-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+/* line 223, ../../resources/sass/base.scss */
+#imglists dl {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+/* line 227, ../../resources/sass/base.scss */
+#imglists dl + dl {
+  margin-left: 1rem;
+}
+/* line 231, ../../resources/sass/base.scss */
+#imglists .loop-unit {
+  width: 32%;
+  margin-bottom: 3rem;
+}
+/* line 236, ../../resources/sass/base.scss */
+#imglists .loop-unit span.no {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333333;
+  letter-spacing: .1rem;
+}
+/* line 245, ../../resources/sass/base.scss */
+#imglists .loop-unit dt {
+  min-height: 350px;
+  background-color: #FCFCFC;
+  position: relative;
+}
+/* line 250, ../../resources/sass/base.scss */
+#imglists .loop-unit dt img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* /#imglists */
+/* line 267, ../../resources/sass/base.scss */
+.formarea {
+  width: 70%;
+  margin: 0 auto 5rem auto;
+}
+/* line 271, ../../resources/sass/base.scss */
+.formarea dl {
+  -js-display: flex;
+  display: flex;
+  display: -webkit-box;
+  /*--- ipad ---*/
+  display: -webkit-flex;
+  /*--- ipad 7.0---*/
+  -webkit-justify-content: start;
+  /* ipad */
+  justify-content: start;
+  -ms-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+/* line 275, ../../resources/sass/base.scss */
+.formarea dl dt {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-left: .6rem;
+  color: #111111;
+}
+/* line 284, ../../resources/sass/base.scss */
+.formarea dl dd {
+  width: 100%;
+}
+/* line 290, ../../resources/sass/base.scss */
+.formarea dl.require dt {
+  border-left: 4px solid #ff9393;
+}
+/* line 296, ../../resources/sass/base.scss */
+.formarea input {
+  font-size: 2rem;
+  padding: .5rem;
+}
+/* line 300, ../../resources/sass/base.scss */
+.formarea textarea {
+  font-size: 1.4rem;
+  width: 100%;
+  min-height: 100px;
+  padding: .5rem;
+}
+
+/* /.formarea */
+/* line 309, ../../resources/sass/base.scss */
+.err-msg {
+  background-color: #FFeeee;
+  width: 70%;
+  margin: 0 auto 5rem auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+/* line 316, ../../resources/sass/base.scss */
+.err-msg li {
+  font-size: 1.3rem;
+  color: #ff5656;
+}
+/* line 320, ../../resources/sass/base.scss */
+.err-msg li + li {
+  margin-top: 1rem;
+}
+
+/* line 328, ../../resources/sass/base.scss */
+#page-form .btn-wrap {
+  margin-top: 5rem;
+}
+
+/* /#page-form */
