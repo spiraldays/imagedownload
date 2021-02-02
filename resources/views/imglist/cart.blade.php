@@ -9,6 +9,11 @@
 {{--コメントの内容--}}
 
 
+<p class="cart-info">
+選択した画像は<a href="{{ url('/applicant/create') }}">「申請フォーム」</a>入力後に本画像をダウンロードいただけます。
+</p>
+
+
 <div id="imglists">
 @foreach ( $view_ary as $word )
 
@@ -35,8 +40,10 @@
 <a href="{{ url('/imglist') }}"><i class="fas fa-plus-circle"></i> 画像を追加選択する</a>
 </span>
 
+<div class="appbtn-area">
+
 <p class="text-center">
-選択した画像は申請フォーム入力後にダウンロードいただけます。
+選択した画像は申請フォーム入力後に本画像をダウンロードいただけます。
 <br>
 ▼
 </p>
@@ -44,6 +51,9 @@
 <span class="btn applicant">
 <a href="{{ url('/applicant/create') }}"><i class="far fa-file-alt"></i> 申請フォームへ</a>
 </span>
+
+</div>
+<!-- /.appbtn-area -->
 
 </div>
 <!-- /.btn-wrap -->

@@ -9,6 +9,11 @@
 {{--コメントの内容--}}
 
 
+<div class="download-msg">
+<p>
+申請が完了しました。「画像ダウンロード」ボタンから画像をダウンロードしてください。
+</p>
+</div>
 
 <div id="imglists">
 @foreach ($session_ids as $data)

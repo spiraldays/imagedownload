@@ -23,7 +23,6 @@ class ApplicantController extends Controller
         $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
         $data = json_decode($json,true);
 
-
         return view('imglist.list',compact('data'));
     }
 

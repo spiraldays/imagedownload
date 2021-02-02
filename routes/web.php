@@ -11,12 +11,18 @@
 |
 */
 
+
+
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
 
-Route::resource('/indexlist', 'IndexController');
+
+Route::get('/', 'ImglistController@index');
 Route::get('imglist', 'ImglistController@index');
+Route::resource('/indexlist', 'IndexController');
 
 Route::get('imglist/cart', [
 	'uses' => 'ImglistController@cart',

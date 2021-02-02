@@ -9,12 +9,12 @@ class ImglistController extends Controller
     //
     public function index()
     {
+    
     	//jsonパース
 		$url = asset('js/imgconfig.json');
 		$json = file_get_contents($url);
 		$json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
 		$data = json_decode($json,true);
-
 
         return view('imglist.list',compact('data'));
     }

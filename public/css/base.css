@@ -390,12 +390,35 @@ body {
 }
 
 /* line 177, ../../resources/sass/base.scss */
+.cart-info {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+/* line 183, ../../resources/sass/base.scss */
+.cart-info a {
+  text-decoration: none;
+  color: #fF9900;
+}
+
+/* line 189, ../../resources/sass/base.scss */
+.appbtn-area {
+  padding: 3rem;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #F9F9F9;
+}
+
+/* /.appbtn-area */
+/* line 196, ../../resources/sass/base.scss */
 .btn {
   margin-top: 1rem;
   display: block;
   text-align: center;
 }
-/* line 181, ../../resources/sass/base.scss */
+/* line 200, ../../resources/sass/base.scss */
 .btn a {
   display: inline-block;
   background-color: #ff5c5c;
@@ -406,7 +429,7 @@ body {
   padding: 1rem 2rem;
   letter-spacing: .1rem;
 }
-/* line 191, ../../resources/sass/base.scss */
+/* line 210, ../../resources/sass/base.scss */
 .btn a:hover {
   opacity: 0.8;
   filter: alpha(opacity=80);
@@ -414,18 +437,18 @@ body {
   -ms-filter: "alpha(opacity=70)";
 }
 
-/* line 198, ../../resources/sass/base.scss */
+/* line 217, ../../resources/sass/base.scss */
 .negation a {
   background-color: #AAAAAA;
 }
 
-/* line 204, ../../resources/sass/base.scss */
+/* line 223, ../../resources/sass/base.scss */
 .back-btn a {
   padding: 1.6rem 5rem;
   margin-bottom: 5rem;
 }
 
-/* line 211, ../../resources/sass/base.scss */
+/* line 230, ../../resources/sass/base.scss */
 .applicant a {
   background-color: #fF9900;
   font-size: 1.5rem;
@@ -434,7 +457,7 @@ body {
   margin-bottom: 5rem;
 }
 
-/* line 220, ../../resources/sass/base.scss */
+/* line 239, ../../resources/sass/base.scss */
 #imglists {
   -js-display: flex;
   display: flex;
@@ -450,23 +473,23 @@ body {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-/* line 223, ../../resources/sass/base.scss */
+/* line 242, ../../resources/sass/base.scss */
 #imglists dl {
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-/* line 227, ../../resources/sass/base.scss */
+/* line 246, ../../resources/sass/base.scss */
 #imglists dl + dl {
   margin-left: 1rem;
 }
-/* line 231, ../../resources/sass/base.scss */
+/* line 250, ../../resources/sass/base.scss */
 #imglists .loop-unit {
   width: 32%;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
-/* line 236, ../../resources/sass/base.scss */
+/* line 255, ../../resources/sass/base.scss */
 #imglists .loop-unit span.no {
   display: inline-block;
   font-weight: bold;
@@ -475,27 +498,33 @@ body {
   color: #333333;
   letter-spacing: .1rem;
 }
-/* line 245, ../../resources/sass/base.scss */
+/* line 264, ../../resources/sass/base.scss */
 #imglists .loop-unit dt {
   min-height: 350px;
   background-color: #FCFCFC;
   position: relative;
+  margin-bottom: 2rem;
 }
-/* line 250, ../../resources/sass/base.scss */
+/* line 270, ../../resources/sass/base.scss */
 #imglists .loop-unit dt img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  max-height: 100%;
+}
+/* line 281, ../../resources/sass/base.scss */
+#imglists .loop-unit span.cart-btn {
+  display: block;
 }
 
 /* /#imglists */
-/* line 267, ../../resources/sass/base.scss */
+/* line 292, ../../resources/sass/base.scss */
 .formarea {
   width: 70%;
   margin: 0 auto 5rem auto;
 }
-/* line 271, ../../resources/sass/base.scss */
+/* line 296, ../../resources/sass/base.scss */
 .formarea dl {
   -js-display: flex;
   display: flex;
@@ -512,7 +541,7 @@ body {
   flex-wrap: wrap;
   margin-bottom: 2rem;
 }
-/* line 275, ../../resources/sass/base.scss */
+/* line 300, ../../resources/sass/base.scss */
 .formarea dl dt {
   width: 100%;
   font-size: 1.2rem;
@@ -521,20 +550,20 @@ body {
   padding-left: .6rem;
   color: #111111;
 }
-/* line 284, ../../resources/sass/base.scss */
+/* line 309, ../../resources/sass/base.scss */
 .formarea dl dd {
   width: 100%;
 }
-/* line 290, ../../resources/sass/base.scss */
+/* line 315, ../../resources/sass/base.scss */
 .formarea dl.require dt {
   border-left: 4px solid #ff9393;
 }
-/* line 296, ../../resources/sass/base.scss */
+/* line 321, ../../resources/sass/base.scss */
 .formarea input {
   font-size: 2rem;
   padding: .5rem;
 }
-/* line 300, ../../resources/sass/base.scss */
+/* line 325, ../../resources/sass/base.scss */
 .formarea textarea {
   font-size: 1.4rem;
   width: 100%;
@@ -543,7 +572,7 @@ body {
 }
 
 /* /.formarea */
-/* line 309, ../../resources/sass/base.scss */
+/* line 334, ../../resources/sass/base.scss */
 .err-msg {
   background-color: #FFeeee;
   width: 70%;
@@ -551,19 +580,31 @@ body {
   padding: 2rem;
   box-sizing: border-box;
 }
-/* line 316, ../../resources/sass/base.scss */
+/* line 341, ../../resources/sass/base.scss */
 .err-msg li {
   font-size: 1.3rem;
   color: #ff5656;
 }
-/* line 320, ../../resources/sass/base.scss */
+/* line 345, ../../resources/sass/base.scss */
 .err-msg li + li {
   margin-top: 1rem;
 }
 
-/* line 328, ../../resources/sass/base.scss */
+/* line 353, ../../resources/sass/base.scss */
 #page-form .btn-wrap {
   margin-top: 5rem;
 }
 
 /* /#page-form */
+/* line 360, ../../resources/sass/base.scss */
+.download-msg {
+  margin-bottom: 5rem;
+}
+/* line 363, ../../resources/sass/base.scss */
+.download-msg p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* /.download-msg */
